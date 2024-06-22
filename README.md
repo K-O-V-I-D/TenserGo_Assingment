@@ -122,7 +122,7 @@ invoice-reminder/
      ```
 
 4. **Access the Application**:
-   - Open your browser and navigate to `http://localhost:3000` to view the frontend.
+   - Open your browser and navigate to `http://localhost:3001` to view the frontend.
    - Ensure the backend server is running on `http://localhost:5000`.
 
 ### Usage
