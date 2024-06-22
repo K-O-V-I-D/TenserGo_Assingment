@@ -1,7 +1,3 @@
-Here's a brief structure of the entire web application for your GitHub README:
-
----
-
 ## Invoice Reminder Web Application
 
 ### Overview
