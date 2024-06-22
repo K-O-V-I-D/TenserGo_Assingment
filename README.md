@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+Here's a brief structure of the entire web application for your GitHub README:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Invoice Reminder Web Application
 
-In the project directory, you can run:
+### Overview
 
-### `npm start`
+The Invoice Reminder Web Application is designed to help users manage their due invoices efficiently. It includes features for viewing, managing, and sending automated reminders for unpaid invoices. The application consists of a frontend built with React and a backend powered by Node.js and Express, connected to a MongoDB database.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Authentication**: Login with Google
+- **Invoice Management**: View a list of due invoices
+- **Automated Reminders**: Trigger automated reminders for due invoices
+- **Responsive Design**: Ensures usability across different devices and screen sizes
 
-### `npm test`
+### Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: React, Axios, React Router
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Authentication**: Passport.js
+- **Styling**: CSS with responsive design principles
 
-### `npm run build`
+### Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+invoice-reminder/
+├── backend/
+│   ├── config/
+│   │   └── passport.js
+│   ├── models/
+│   │   └── Invoice.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   └── invoices.js
+│   ├── server.js
+│   └── .env
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Home.js
+│   │   │   ├── DueInvoices.js
+│   │   │   ├── LoadingIcon.js
+│   │   │   └── Modal.js
+│   │   ├── styles/
+│   │   │   ├── home.css
+│   │   │   ├── invoices.css
+│   │   │   ├── loadingIcon.css
+│   │   │   └── modal.css
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── .env
+├── .gitignore
+├── README.md
+└── package.json
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **server.js**: Main server file to configure and run the Express server.
+- **config/passport.js**: Configuration for Passport.js authentication.
+- **models/Invoice.js**: Mongoose schema for invoices.
+- **routes/auth.js**: Routes for user authentication.
+- **routes/invoices.js**: Routes for managing invoices.
 
-### `npm run eject`
+### Frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **components/Home.js**: Home page with links to login and view invoices.
+- **components/DueInvoices.js**: Page displaying the list of due invoices with trigger automation buttons.
+- **components/LoadingIcon.js**: Loading icon component.
+- **components/Modal.js**: Modal component for displaying pop-up messages.
+- **styles/home.css**: CSS for the Home component.
+- **styles/invoices.css**: CSS for the DueInvoices component.
+- **styles/loadingIcon.css**: CSS for the LoadingIcon component.
+- **styles/modal.css**: CSS for the Modal component.
+- **App.js**: Main React component that sets up routing.
+- **index.js**: Entry point for the React application.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation and Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/your-username/invoice-reminder.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Backend Setup**:
+   - Navigate to the backend directory:
+     ```sh
+     cd invoice-reminder/backend
+     ```
+   - Install dependencies:
+     ```sh
+     npm install
+     ```
+   - Create a `.env` file and add your environment variables:
+     ```sh
+     MONGO_URI=your_mongodb_uri
+     SESSION_SECRET=your_session_secret
+     GOOGLE_CLIENT_ID=your_google_client_id
+     GOOGLE_CLIENT_SECRET=your_google_client_secret
+     ```
+   - Start the backend server:
+     ```sh
+     npm start
+     ```
 
-## Learn More
+3. **Frontend Setup**:
+   - Navigate to the frontend directory:
+     ```sh
+     cd ../frontend
+     ```
+   - Install dependencies:
+     ```sh
+     npm install
+     ```
+   - Create a `.env` file and add your environment variables:
+     ```sh
+     REACT_APP_API_URL=http://localhost:5000/api
+     ```
+   - Start the frontend development server:
+     ```sh
+     npm start
+     ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Access the Application**:
+   - Open your browser and navigate to `http://localhost:3000` to view the frontend.
+   - Ensure the backend server is running on `http://localhost:5000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Usage
 
-### Code Splitting
+- **Login**: Use the "Login with Google" button to authenticate.
+- **View Invoices**: Navigate to the "View Invoices" page to see a list of due invoices.
+- **Trigger Automation**: Click the "Trigger Automation" button next to an invoice to send a reminder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Contributing
 
-### Analyzing the Bundle Size
+- Fork the repository.
+- Create a new branch (`git checkout -b feature-branch`).
+- Make your changes and commit them (`git commit -m 'Add new feature'`).
+- Push to the branch (`git push origin feature-branch`).
+- Open a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
